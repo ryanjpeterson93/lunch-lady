@@ -23,6 +23,7 @@ class App
     else
       choose_main
       choose_side
+      choose_side
       create_another_order
     end
   end
@@ -60,7 +61,6 @@ class App
 
     selected_side_dish = @side_dish[get_side - 1]
     puts "You ordered #{selected_side_dish[:food]}!"
-
     puts "The total of your order is $#{@total}.00"
   end
 
