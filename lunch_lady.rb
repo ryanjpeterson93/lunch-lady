@@ -14,8 +14,6 @@ class App
 
   @total = 0
   
-  @cart = []
-
     get_menu
     input = gets.strip
     case input
@@ -45,7 +43,7 @@ class App
     @total = @total + selected_main_dish[:price]
 
     selected_main_dish = @main_dish[get_main - 1]
-    selected_main_dish[:food]
+    puts "You ordered a #{selected_main_dish[:food]}!"
   end
   
   def choose_side
@@ -58,13 +56,11 @@ class App
     @total = @total + selected_side_dish[:price]
 
     selected_side_dish = @side_dish[get_side - 1]
-    selected_side_dish[:food]
+    puts "You ordered #{selected_side_dish[:food]}!"
   end
 
   def total_lunch
-    puts "You ordered"
-    puts "Your order costs  $#{@total}.00"
-    #gotta figure out how to add everything here
+    puts "The total of your order is $#{@total}.00"
     puts "Thanks for coming to DevPoint Cafe!"
   end
 
