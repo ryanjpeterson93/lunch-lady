@@ -25,7 +25,6 @@ class App
       choose_side
       total_lunch
     end
-
   end
 
   def get_menu
@@ -34,9 +33,11 @@ class App
   end
 
   def choose_main
+    puts "Please choose a Main Dish"
     @main_dish.each_with_index do |main, index|
       puts "#{index + 1}. #{main[:food]} will cost you $#{main[:price]}.00"
     end
+
     get_main = gets.to_i
     selected_main_dish = @main_dish[get_main - 1]
     selected_main_dish[:price]
@@ -47,9 +48,11 @@ class App
   end
   
   def choose_side
+    puts "Please choose a Side Dish"
     @side_dish.each_with_index do |side, index|
       puts "#{index + 1}. #{side[:food]} will cost you $#{side[:price]}.00"
     end
+
     get_side = gets.to_i 
     selected_side_dish = @side_dish[get_side - 1]
     selected_side_dish[:price]
@@ -61,8 +64,15 @@ class App
 
   def total_lunch
     puts "The total of your order is $#{@total}.00"
-    puts "Thanks for coming to DevPoint Cafe!"
+    puts "Would you like to place another order? y/n "
+    another_order = gets.strip
+    case another_order
+    when "y"
+      run
+    when "n"
+      puts "Thanks for coming to DevPoint Cafe!"
+      return
+    end
   end
-
 end
 App.new.run
