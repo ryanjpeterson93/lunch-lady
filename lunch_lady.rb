@@ -20,10 +20,10 @@ class App
     when "EXIT"
       puts "See you again soon!"
       return
-    else 
+    else
       choose_main
       choose_side
-      total_lunch
+      create_another_order
     end
   end
 
@@ -60,10 +60,11 @@ class App
 
     selected_side_dish = @side_dish[get_side - 1]
     puts "You ordered #{selected_side_dish[:food]}!"
+
+    puts "The total of your order is $#{@total}.00"
   end
 
-  def total_lunch
-    puts "The total of your order is $#{@total}.00"
+  def create_another_order
     puts "Would you like to place another order? y/n "
     another_order = gets.strip
     case another_order
@@ -72,6 +73,9 @@ class App
     when "n"
       puts "Thanks for coming to DevPoint Cafe!"
       return
+    else
+      puts "please try again"
+      create_another_order
     end
   end
 end
