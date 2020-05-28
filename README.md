@@ -1,6 +1,8 @@
-# lunch-lady
+# Ruby Lunch Lady
 
-## This is one of my first apps
+### Assignment given as part of the DevPoint Labs Full Stack Web Development Course
+
+#### Week 1
 
 The purpose of this app is to simulate an interaction between a customer
 and an employee of a café, or in this case a lunch lady. 
